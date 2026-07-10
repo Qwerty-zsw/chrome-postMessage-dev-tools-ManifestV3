@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "postMessage Developer Tools",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Provides a dev tools panel to view postMessages for the current page",
   "devtools_page": "./bootstrap.html",
   "icons": {
@@ -11,8 +11,8 @@
     "128": "chat-128.png"
   },
   "background": {
-    "scripts": ["./src/background.js"],
-    "persistent": false
+    "service_worker": "src/background.js"
   },
-  "permissions": ["http://*/*", "https://*/*"]
+  "permissions": ["scripting", "tabs"],
+  "host_permissions": ["http://*/*", "https://*/*"]
 }

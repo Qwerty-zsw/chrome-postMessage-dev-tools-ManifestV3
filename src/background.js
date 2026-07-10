@@ -18,7 +18,12 @@ chrome.runtime.onMessage.addListener(contentScriptMessageRelayToDevTools);
 chrome.runtime.onConnect.addListener((devToolsConnection) => {
   const devToolsMessageListener = (message) => {
     if (message.type === "init") {
-      chrome.tabs.executeScript(message.tabId, { file: message.scriptToInject });
+      chrome.scripting.executeScript({
+        target: { tabId: message.tabId },
+        files: [message.scriptToInject],
+      }).catch((err) => {
+        console.log("Failed to inject content script:", err);
+      });
 
       connections[message.tabId] = devToolsConnection;
     }
