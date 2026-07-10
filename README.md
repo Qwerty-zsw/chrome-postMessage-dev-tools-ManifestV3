@@ -1,4 +1,5 @@
-# chrome-postMessage-dev-tools (ManifestV3 Edition)
+# chrome-postMessage-dev-tools
 Chrome devtools extension that displays info on postMessages the top page has received.
 
-Forked Repository: https://github.com/alxHenry/chrome-postMessage-dev-tools
+Store link: https://chrome.google.com/webstore/detail/postmessage-developer-too/nadeoelabbieobdpmejlfidbhhdicmpa?hl=en
+
